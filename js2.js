@@ -37,15 +37,14 @@ else{
 $('#chatWindow').append(studentMessageContainer);
 	updateScroll();
 	$('#chatInput').val('');
-var ajax = new XMLHttpRequest();
-ajax.onreadystatechange = function(){
-	if(this.readyState == 4 && this.status == 200){
-		$('#chatWindow').append(status);
-		updateScroll();
-	}
-};
-ajax.open("POST","something.php",true);
-ajax.send("message=$input");
+$.ajax({
+   method: "POST",
+   url:"something.php"
+   data:{input:message}
+})
+	.done(function(){
+		alert("Success");
+	})
 
 
 }
