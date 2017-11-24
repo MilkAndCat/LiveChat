@@ -39,11 +39,13 @@ $('#chatWindow').append(studentMessageContainer);
 	$('#chatInput').val('');
 $.ajax({
    method: "POST",
-   url:"something.php"
-   data:{input:message}
+   url:"sendSMS.php",
+   data:{input : message}
 })
-	.done(function(){
-		alert("Success");
+	.done(function(data){
+		$('#chatWindow').append(status);
+		updateScroll();
+	
 	})
 
 

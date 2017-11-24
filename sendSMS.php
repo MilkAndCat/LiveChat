@@ -23,7 +23,7 @@ try {
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('qifanguo@gmail.com', 'qifan');
+    $mail->setFrom('house941217@gmail.com', 'qifan');
     $mail->addAddress('6786873967@mms.cricketwireless.net', 'Qifan');     // Add a recipient
 
 
@@ -41,8 +41,11 @@ try {
 } 
 }
 
-if(isset($_REQUEST['userInput'])){
-$input = $_REQUEST['userInput'];
+if(isset($_POST['input'])){
+$input = $_POST['input'];
 echo $input;
-echo hheleleflkefljelfk;
+sendSMS($input);
+
+
+
 }
